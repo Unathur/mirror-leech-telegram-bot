@@ -71,10 +71,12 @@ class TgUploader:
             osrename(up_path, new_path)
             up_path = new_path
         else:
-            cap_mono = f"<code>{file_}</code>"
+            cap_mono = f"<b>{file_}</b>"
         notMedia = False
         thumb = self.__thumb
         self.__is_corrupted = False
+        cap_mono = cap_mono.replace(".mkv","")
+        cap_mono = cap_mono.replace(".mp4","")
         try:
             if not self.__as_doc:
                 duration = 0
